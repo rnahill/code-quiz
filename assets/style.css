@@ -17,64 +17,17 @@ body {
 }
 
 
-div {
-    
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   border: solid var(--dark-color) 1px;
-   width: 50vh;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 5vh;
-   padding: 3vh;
-   
-}
 
+/* classes & id's to make (already added to html) */
 
-div ul {
-    list-style-type: none;
-    padding: 1vh;
-}
-
-
-button {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 1vh;
-    border-radius: 15%;
-    margin: 1vh;
-}
-
-#startButton {
+.center {
 
 }
 
-#question1{
-
-}
-
-#question2{
+#intro {
     
 }
 
-#question3{
-    
-}
-
-#question4{
-    
-}
-
-#question5{
-    
-}
-
-#finalScore {
-
-}
-
-#endBox {
+#startBtn {
 
 }
