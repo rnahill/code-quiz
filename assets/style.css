@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    color: var(--dark-color)
 }
 
 
@@ -16,33 +17,56 @@ body {
     background-color: var(--light-color);
 }
 
+h1, h2, h3, form {
+    margin: 1vh;
+}
+
+button {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 1vh;
+    padding: 5px;
+    font-size: 16px;
+    
+}
+
+ul li {
+    list-style-type: none;
+}
 
 
 /* classes & id's to make (already added to html) */
 
 .center {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#intro {
-
+.box {
+    border: solid var(--dark-color) 1px;
+    padding: 10px;
+    margin: 5vh;
+    border-radius: 10%;
+    box-shadow: 5px 5px var(--dark-color);
+    width: 50%;
 }
 
-#startBtn {
+/* ID's and CLASSES THAT DO NOT NEED CSS? */
+/* id's choice1, 2, 3, 4 */
+/* id score */
+/* id initials */
+/* id saveBtn */
+/* id highScores */
+/* id restart */
+/* id clear */
+/* id opening */
+/* id quiz */
+/* id ending */
+/* id scoresSection */
+/* id intro */
+/* id startBtn */
+/* id timer */
+/* id question */
+/* class choiceBtn */
 
-}
-
-#timer{
-
-}
-
-#question {
-
-}
-
-.choiceBtn {
-
-}
-
-/* id's choice1, 2, 3, 4 do not need CSS? */
-/* id initials does not need CSS? */

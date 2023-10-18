@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Code Quiz</title>
 </head>
@@ -11,7 +14,7 @@
        
 
         <!-- Opening section -->
-        <section>
+        <section class="box" id="opening">
             <h1>Code Quiz</h1>
             <ul id="intro">
                 <li>Read the questions carefully and answer to the best of your ability.</li>
@@ -22,20 +25,20 @@
 
 
         <!-- Questions section -->
-        <section>
+        <section class="box" id="quiz">
             <h3 id="timer"></h3>
             <h2 id="question"></h2>
                 <div>
                     <button class="choiceBtn" id="choice1"></button>
                     <button class="choiceBtn" id="choice2"></button>
-                    <button class="choiceBtn"  id="choice3"></button>
-                    <button class="choiceBtn"  id="choice4"></button>
+                    <button class="choiceBtn" id="choice3"></button>
+                    <button class="choiceBtn" id="choice4"></button>
                 </div>
         </section>
 
 
-         <!-- End section -->
-        <section>
+         <!-- Ending section -->
+        <section class="box" id="ending">
             <h1>You completed the quiz!</h1>
             <h2>Final Score:</h2>
                 <p id="score"></p>
@@ -44,18 +47,20 @@
                 <label for="initials">Initials:</label><br>
                 <input type="text" id="initials" name="initials"><br>
            </form>
-           <!-- save button -->
+           <button id="saveBtn">SAVE</button>
         </section>
 
 
-        <!-- highscores section -->
-        <section>
-            <!-- scores list-->
-            <!-- restart quiz button -->
-            <!-- clear scores button -->
+        <!-- Highscores section -->
+        <section class="box" id="scoresSection">
+            <h1>Highscores</h1>
+            <ul id="highScores"></ul>
+            <button id="restart">Restart Quiz</button>
+            <button id="clear">Clear scores</button>
         </section>
 
-
+    
     </main>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
