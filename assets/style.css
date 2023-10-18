@@ -53,20 +53,25 @@ ul li {
 }
 
 /* ID's and CLASSES THAT DO NOT NEED CSS? */
+
+/*  */
+/* id openingSection */
+/* id intro */
+/* id startBtn */
+
+/* id quizSection */
+/* id timer */
+/* id question */
+/* id choices */
+/* class choiceBtn */
 /* id's choice1, 2, 3, 4 */
+
+/* id endingSection */
 /* id score */
 /* id initials */
 /* id saveBtn */
-/* id highScores */
-/* id restart */
-/* id clear */
-/* id opening */
-/* id quiz */
-/* id ending */
-/* id scoresSection */
-/* id intro */
-/* id startBtn */
-/* id timer */
-/* id question */
-/* class choiceBtn */
 
+/* id scoresSection */
+/* id highScores */
+/* id restartBtn */
+/* id clearBtn */
