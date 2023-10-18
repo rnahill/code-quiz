@@ -53,6 +53,11 @@ ul li {
     width: 50%;
 }
 
+#endingSection, #scoresSection, #quizSection {
+    display: none;
+}
+
+
 /* ID's and CLASSES THAT DO NOT NEED CSS? */
 
 /*  */

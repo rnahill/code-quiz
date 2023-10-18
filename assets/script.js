@@ -39,6 +39,7 @@ var quizEL = document.getElementById("quizSection");
 var timerEl = document.getElementById("timer");
 var questionEl = document.getElementById("question");
 var choicesEl = document.getElementById("choices");
+var choiceBtnEl = document.getElementsByClassName("choiceBtn");
 // variables for choice1, 2, 3, 4?
 
 var endingEL = document.getElementById("endingSection");
@@ -107,7 +108,7 @@ const questions = [
 
 
 // timer function
-var secondsLeft = 60;
+var secondsLeft = 10;
 
 function setTime() {
 
@@ -120,6 +121,7 @@ var timerInterval = setInterval( function () {
     if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         quizEL.style.display = "none";
+        endingEL.style.display = "block";
     }
 }, 1000)
 
@@ -127,5 +129,57 @@ var timerInterval = setInterval( function () {
 
 startBtnEL.addEventListener("click", function(){
     setTime();
+    displayQuestions();
 })
 
+// function to display questions
+
+// let currentQuestion = 0;
+
+
+function displayQuestions() {
+    quizEL.style.display = "block";
+    openingEL.style.display = "none";
+
+    let choice0El = document.getElementById("choice0");
+    let choice1El = document.getElementById("choice1"); 
+    let choice2El = document.getElementById("choice2");
+    let choice3El = document.getElementById("choice3");
+   
+   choice1El.textContent = questions[0].answers[0];
+   
+    // questionEl.textContent = questions[0].question;
+
+    // if (currentQuestion > questions.length){
+    //     quizEL.style.display = "none";
+    //     endingEL.style.display = "block"
+    //     clearInterval(timerInterval);
+    // }
+    // else {
+        // for(let i = 0; i < questions.length; i++) {
+        //     questionEl.textContent = questions[i].question;
+        //     // currentQuestion++;          
+        // }
+        
+    }
+
+// }
+
+
+// function to check for correct answers
+
+function correctAnswers() { 
+
+}
+
+// function for saving a score
+
+function saveScores() {
+
+}
+
+// function to display scores
+
+function displayScores() {
+
+}
