@@ -25,9 +25,24 @@ body {
 }
 
 #intro {
-    
+
 }
 
 #startBtn {
 
 }
+
+#timer{
+
+}
+
+#question {
+
+}
+
+.choiceBtn {
+
+}
+
+/* id's choice1, 2, 3, 4 do not need CSS? */
+/* id initials does not need CSS? */
