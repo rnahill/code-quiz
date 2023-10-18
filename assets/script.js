@@ -51,7 +51,59 @@ var highScoresEl = document.getElementById("highScores");
 var restartBtnEl = document.getElementById("restartBtn");
 var clearBtnEl = document.getElementById("clearBtn");
 
-scoreEl = 0;
+const questions = [
+    {
+        question: "Commonly used data types DO NOT include:",
+        answers: [
+            "strings",
+            "booleans",
+            "alerts",
+            "numbers",
+        ],
+        correctIndex: 2
+    },
+    {
+        question: `The condition in an if / else statement is enclosed within ______.`,
+        answers: [
+            `quotes`,
+            `curly brackets`,
+            `parentheses`,
+            `square brackets`,
+        ],
+        correctIndex: 2
+    },
+    {
+        question: "Arrays in Javascript can be used to store ________.",
+        answers: [
+            "numbers and strings",
+            "other arrays",
+            "booleans",
+            "all of the above",
+        ],
+        correctIndex: 3
+    },
+    {
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+        answers: [
+            "commas",
+            "curly brackets",
+            "quotes",
+            "parentheses",
+        ],
+        correctIndex: 2
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answers: [
+            "Javascript",
+            "terminal/bash",
+            "for loops",
+            "console.log"
+        ],
+        correctIndex: 3
+    },
+];
+
 
 
 // timer function
@@ -67,6 +119,7 @@ var timerInterval = setInterval( function () {
 
     if(secondsLeft <= 0) {
         clearInterval(timerInterval);
+        quizEL.style.display = "none";
     }
 }, 1000)
 
@@ -76,4 +129,3 @@ startBtnEL.addEventListener("click", function(){
     setTime();
 })
 
-// 
