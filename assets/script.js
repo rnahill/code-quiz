@@ -40,7 +40,7 @@ var timerEl = document.getElementById("timer");
 var questionEl = document.getElementById("question");
 var choicesEl = document.getElementById("choices");
 var choiceBtnEl = document.getElementsByClassName("choiceBtn");
-// variables for choice1, 2, 3, 4?
+
 
 var endingEL = document.getElementById("endingSection");
 var scoreEl = document.getElementById("score");
@@ -56,58 +56,54 @@ const questions = [
     {
         question: "Commonly used data types DO NOT include:",
         answers: [
-            "strings",
-            "booleans",
-            "alerts",
-            "numbers",
+            "A: strings",
+            "B: booleans",
+            "C: alerts",
+            "D: numbers",
         ],
-        correctIndex: 2
     },
     {
-        question: `The condition in an if / else statement is enclosed within ______.`,
+        question: "The condition in an if / else statement is enclosed within ______.",
         answers: [
-            `quotes`,
-            `curly brackets`,
-            `parentheses`,
-            `square brackets`,
+            "A: quotes",
+            "B: curly brackets",
+            "C: parentheses",
+            "D: square brackets",
         ],
-        correctIndex: 2
     },
     {
         question: "Arrays in Javascript can be used to store ________.",
         answers: [
-            "numbers and strings",
-            "other arrays",
-            "booleans",
-            "all of the above",
+            "A: numbers and strings",
+            "B: other arrays",
+            "C: booleans",
+            "D: all of the above",
         ],
-        correctIndex: 3
     },
     {
         question: "String values must be enclosed within ____ when being assigned to variables.",
         answers: [
-            "commas",
-            "curly brackets",
-            "quotes",
-            "parentheses",
+            "A: commas",
+            "B: curly brackets",
+            "C: quotes",
+            "D: parentheses",
         ],
-        correctIndex: 2
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
         answers: [
-            "Javascript",
-            "terminal/bash",
-            "for loops",
-            "console.log"
+            "A: Javascript",
+            "B: terminal/bash",
+            "C: for loops",
+            "D: console.log"
         ],
-        correctIndex: 3
     },
 ];
 
 
 
 // timer function
+
 var secondsLeft = 10;
 
 function setTime() {
@@ -129,41 +125,226 @@ var timerInterval = setInterval( function () {
 
 startBtnEL.addEventListener("click", function(){
     setTime();
-    displayQuestions();
+    displayQuestion1();
 })
 
-// function to display questions
+// functions to display questions
 
-// let currentQuestion = 0;
+scoreEl = 0;
 
+// display question 1
 
-function displayQuestions() {
+function displayQuestion1() {
     quizEL.style.display = "block";
     openingEL.style.display = "none";
+
+    question.textContent = questions[0].question;
 
     let choice0El = document.getElementById("choice0");
     let choice1El = document.getElementById("choice1"); 
     let choice2El = document.getElementById("choice2");
     let choice3El = document.getElementById("choice3");
    
-   choice1El.textContent = questions[0].answers[0];
-   
-    // questionEl.textContent = questions[0].question;
+    choice0El.textContent = questions[0].answers[0];
+    choice1El.textContent = questions[0].answers[1];
+    choice2El.textContent = questions[0].answers[2];
+    choice3El.textContent = questions[0].answers[3];
 
-    // if (currentQuestion > questions.length){
-    //     quizEL.style.display = "none";
-    //     endingEL.style.display = "block"
-    //     clearInterval(timerInterval);
-    // }
-    // else {
-        // for(let i = 0; i < questions.length; i++) {
-        //     questionEl.textContent = questions[i].question;
-        //     // currentQuestion++;          
-        // }
+    choice0El.onclick = function(){
+        displayQuestion2();
+    }
+   
+    choice1El.onclick = function(){
+        displayQuestion2();
+    }
+
+    choice2El.onclick = function(){
+        scoreEl++;
+        displayQuestion2();
         
     }
 
-// }
+    choice3El.onclick = function(){
+        displayQuestion2();
+    }
+
+    }
+
+
+// display question 2
+
+function displayQuestion2() {
+    quizEL.style.display = "block";
+    openingEL.style.display = "none";
+
+    question.textContent = questions[1].question;
+
+    let choice0El = document.getElementById("choice0");
+    let choice1El = document.getElementById("choice1"); 
+    let choice2El = document.getElementById("choice2");
+    let choice3El = document.getElementById("choice3");
+   
+   choice0El.textContent = questions[1].answers[0];
+   choice1El.textContent = questions[1].answers[1];
+   choice2El.textContent = questions[1].answers[2];
+   choice3El.textContent = questions[1].answers[3];
+   
+
+    choice0El.onclick = function(){
+        displayQuestion3();
+    }
+
+    choice1El.onclick = function(){
+        displayQuestion3();
+    }
+
+    choice2El.onclick = function(){
+        scoreEl++;
+        displayQuestion3();
+        
+    }
+
+    choice3El.onclick = function(){
+        displayQuestion3();
+    }   
+    
+    }   
+    
+
+    // display question 3
+
+function displayQuestion3() {
+    quizEL.style.display = "block";
+    openingEL.style.display = "none";
+
+    question.textContent = questions[2].question;
+
+    let choice0El = document.getElementById("choice0");
+    let choice1El = document.getElementById("choice1"); 
+    let choice2El = document.getElementById("choice2");
+    let choice3El = document.getElementById("choice3");
+   
+   choice0El.textContent = questions[2].answers[0];
+   choice1El.textContent = questions[2].answers[1];
+   choice2El.textContent = questions[2].answers[2];
+   choice3El.textContent = questions[2].answers[3];
+   
+   choice0El.onclick = function(){
+        displayQuestion4();
+    }
+
+    choice1El.onclick = function(){
+        displayQuestion4();
+    }
+
+    choice2El.onclick = function(){
+        displayQuestion4();
+    }
+
+    choice3El.onclick = function(){
+        scoreEl++;
+        displayQuestion4();
+    } 
+
+    }
+
+
+    // display question 4
+
+function displayQuestion4() {
+    quizEL.style.display = "block";
+    openingEL.style.display = "none";
+
+    question.textContent = questions[3].question;
+
+    let choice0El = document.getElementById("choice0");
+    let choice1El = document.getElementById("choice1"); 
+    let choice2El = document.getElementById("choice2");
+    let choice3El = document.getElementById("choice3");
+   
+   choice0El.textContent = questions[3].answers[0];
+   choice1El.textContent = questions[3].answers[1];
+   choice2El.textContent = questions[3].answers[2];
+   choice3El.textContent = questions[3].answers[3];
+   
+    choice0El.onclick = function(){
+        displayQuestion5();
+    }
+
+    choice1El.onclick = function(){
+        displayQuestion5();
+    }
+
+    choice2El.onclick = function(){
+        scoreEl++;
+        displayQuestion5();
+    }
+
+    choice3El.onclick = function(){
+        displayQuestion5();
+    }
+
+    }
+
+
+    // display question 5
+
+function displayQuestion5() {
+    quizEL.style.display = "block";
+    openingEL.style.display = "none";
+
+    question.textContent = questions[4].question;
+
+    let choice0El = document.getElementById("choice0");
+    let choice1El = document.getElementById("choice1"); 
+    let choice2El = document.getElementById("choice2");
+    let choice3El = document.getElementById("choice3");
+   
+   choice0El.textContent = questions[4].answers[0];
+   choice1El.textContent = questions[4].answers[1];
+   choice2El.textContent = questions[4].answers[2];
+   choice3El.textContent = questions[4].answers[3];
+   
+   choice0El.onclick = function(){
+        endingEL.style.display = "block";
+        quizEL.style.display = "none";
+    }
+
+    choice1El.onclick = function(){
+        endingEL.style.display = "block";
+        quizEL.style.display = "none";
+    }
+
+    choice2El.onclick = function(){
+        scoreEl++;
+        endingEL.style.display = "block";
+        quizEL.style.display = "none";
+    }
+
+    choice3El.onclick = function(){
+        endingEL.style.display = "block";
+        quizEL.style.display = "none";
+    }
+    }
+
+    // scoreEl.textContent = "Final score: " + scoreEl + "/5"; 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function to check for correct answers
