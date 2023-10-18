@@ -51,11 +51,29 @@ var highScoresEl = document.getElementById("highScores");
 var restartBtnEl = document.getElementById("restartBtn");
 var clearBtnEl = document.getElementById("clearBtn");
 
-let score = 0;
-let timeLeft = 60;
+scoreEl = 0;
 
-function countDown() {
-    timerEl.textContent = "Time left: " + timeLeft;
 
+// timer function
+var secondsLeft = 60;
+
+function setTime() {
+
+timerEl.textContent = secondsLeft + " seconds left.";
+
+var timerInterval = setInterval( function () {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + " seconds left.";
+
+    if(secondsLeft <= 0) {
+        clearInterval(timerInterval);
+    }
+}, 1000)
 
 }
+
+startBtnEL.addEventListener("click", function(){
+    setTime();
+})
+
+// 
