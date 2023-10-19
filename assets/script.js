@@ -43,7 +43,6 @@ var choiceBtnEl = document.getElementsByClassName("choiceBtn");
 
 
 var endingEL = document.getElementById("endingSection");
-var scoreEl = document.getElementById("score");
 var initialsEl = document.getElementById("initials");
 var saveBtnEl = document.getElementById("saveBtn");
 
@@ -51,6 +50,9 @@ var scoresEL = document.getElementById("scoresSection");
 var highScoresEl = document.getElementById("highScores");
 var restartBtnEl = document.getElementById("restartBtn");
 var clearBtnEl = document.getElementById("clearBtn");
+
+
+// questions array
 
 const questions = [
     {
@@ -104,7 +106,7 @@ const questions = [
 
 // timer function
 
-var secondsLeft = 10;
+var secondsLeft = 60;
 
 function setTime() {
 
@@ -123,14 +125,18 @@ var timerInterval = setInterval( function () {
 
 }
 
+// start button
+
 startBtnEL.addEventListener("click", function(){
     setTime();
     displayQuestion1();
 })
 
-// functions to display questions
+// start score counter
 
-scoreEl = 0;
+let score = 0;
+
+// functions to display questions
 
 // display question 1
 
@@ -159,8 +165,9 @@ function displayQuestion1() {
     }
 
     choice2El.onclick = function(){
-        scoreEl++;
         displayQuestion2();
+        score++;
+
         
     }
 
@@ -199,7 +206,7 @@ function displayQuestion2() {
     }
 
     choice2El.onclick = function(){
-        scoreEl++;
+        score++;
         displayQuestion3();
         
     }
@@ -242,7 +249,7 @@ function displayQuestion3() {
     }
 
     choice3El.onclick = function(){
-        scoreEl++;
+        score++;
         displayQuestion4();
     } 
 
@@ -276,7 +283,7 @@ function displayQuestion4() {
     }
 
     choice2El.onclick = function(){
-        scoreEl++;
+        score++;
         displayQuestion5();
     }
 
@@ -308,50 +315,36 @@ function displayQuestion5() {
    choice0El.onclick = function(){
         endingEL.style.display = "block";
         quizEL.style.display = "none";
+        updateScore();
     }
 
     choice1El.onclick = function(){
         endingEL.style.display = "block";
         quizEL.style.display = "none";
+        updateScore();
     }
 
     choice2El.onclick = function(){
-        scoreEl++;
+        score++;
         endingEL.style.display = "block";
         quizEL.style.display = "none";
+        updateScore();
     }
 
     choice3El.onclick = function(){
         endingEL.style.display = "block";
         quizEL.style.display = "none";
+        updateScore();
     }
     }
 
-    // scoreEl.textContent = "Final score: " + scoreEl + "/5"; 
-    
+// function to update score
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function to check for correct answers
-
-function correctAnswers() { 
-
+function updateScore () {
+    let scoreEl = document.getElementById("finalScore");
+    scoreEl.textContent = "Final score: " + score + "/5";
 }
+
 
 // function for saving a score
 
