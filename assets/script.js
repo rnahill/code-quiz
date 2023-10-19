@@ -43,7 +43,7 @@ var choiceBtnEl = document.getElementsByClassName("choiceBtn");
 
 
 var endingEL = document.getElementById("endingSection");
-var initialsEl = document.getElementById("initials");
+
 var saveBtnEl = document.getElementById("saveBtn");
 
 var scoresEL = document.getElementById("scoresSection");
@@ -134,7 +134,7 @@ startBtnEL.addEventListener("click", function(){
 
 // start score counter
 
-let score = 0;
+var score = 0;
 
 // functions to display questions
 
@@ -316,12 +316,14 @@ function displayQuestion5() {
         endingEL.style.display = "block";
         quizEL.style.display = "none";
         updateScore();
+        
     }
 
     choice1El.onclick = function(){
         endingEL.style.display = "block";
         quizEL.style.display = "none";
         updateScore();
+        
     }
 
     choice2El.onclick = function(){
@@ -329,31 +331,58 @@ function displayQuestion5() {
         endingEL.style.display = "block";
         quizEL.style.display = "none";
         updateScore();
+       
     }
 
     choice3El.onclick = function(){
         endingEL.style.display = "block";
         quizEL.style.display = "none";
         updateScore();
+        
     }
     }
 
 // function to update score
 
+
+
 function updateScore () {
     let scoreEl = document.getElementById("finalScore");
     scoreEl.textContent = "Final score: " + score + "/5";
+    
+    localStorage.setItem("score", score);
+
+    
 }
 
-
-// function for saving a score
-
-function saveScores() {
-
+function saveScore() {
+    endingEL.style.display = "none";
+    scoresEL.style.display = "block";
+    var data = localStorage.getItem("score");
+    var initialsEl = document.getElementById("initials");
+    var userInitials = initialsEl.value;
+    highScoresEl.textContent = userInitials + ": " + data;
+    console.log(initialsEl);
 }
 
-// function to display scores
+saveBtnEl.addEventListener("click", function(){
+    saveScore();
+})
 
-function displayScores() {
+// function to clear scores
 
+function clearScores() {
+    localStorage.clear();
+    highScoresEl.textContent = null;
 }
+
+clearBtnEl.addEventListener("click", function(){
+    clearScores();
+})
+
+
+restartBtnEl.addEventListener("click", function(){
+    scoresEL.style.display = "none";
+    setTime();
+    displayQuestion1();
+} )
