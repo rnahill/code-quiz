@@ -36,8 +36,6 @@ ul li {
 }
 
 
-/* classes & id's to make (already added to html) */
-
 .center {
     display: flex;
     justify-content: center;
@@ -56,28 +54,3 @@ ul li {
 #endingSection, #scoresSection, #quizSection {
     display: none;
 }
-
-
-/* ID's and CLASSES THAT DO NOT NEED CSS? */
-
-/*  */
-/* id openingSection */
-/* id intro */
-/* id startBtn */
-
-/* id quizSection */
-/* id timer */
-/* id question */
-/* id choices */
-/* class choiceBtn */
-/* id's choice1, 2, 3, 4 */
-
-/* id endingSection */
-/* id score */
-/* id initials */
-/* id saveBtn */
-
-/* id scoresSection */
-/* id highScores */
-/* id restartBtn */
-/* id clearBtn */
